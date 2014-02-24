@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+     <EditText
+                        android:id="@+id/edfindword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="17dp"
+                        android:ems="10"
+                        android:hint="Type your word here" />
+
+                    <TextView
+                        android:id="@+id/tvphatamfind"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/tvketquafind"
+                        android:layout_below="@+id/edfindword"
+                        android:layout_marginTop="73dp"
+                        android:text="TextView phat am"
+                        android:textColor="#00ff00"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/tvvidufind"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/tvketquafind"
+                        android:layout_marginTop="51dp"
+                        android:text="TextView vidu"
+                        android:textColor="#690000"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/tvketquafind"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/tvvidufind"
+                        android:layout_below="@+id/tvphatamfind"
+                        android:layout_marginTop="28dp"
+                        android:text="TextView"
+                        android:textColor="#ff0000"
+                        android:textSize="25sp" />
+
+                    <Button
+                        android:id="@+id/btfind"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/tvphatamfind"
+                        android:layout_alignParentRight="true"
+                        android:text="Find" />
+
+</RelativeLayout>

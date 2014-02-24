@@ -1,0 +1,137 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  
+    tools:context=".Game_Word" >
+
+    <TextView
+        android:id="@+id/tvnghia"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edword"
+        android:layout_alignParentTop="true"
+        android:background="#003366"
+        android:paddingLeft="30sp"
+        android:text="Nghia"
+        android:textColor="#900000"
+        android:textSize="30sp"
+        android:textStyle="italic|bold"
+        android:typeface="serif" />
+
+    <Button
+        android:id="@+id/btdapan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/btnext"
+        android:text="Xem Dap An" />
+
+    <EditText
+        android:id="@+id/edword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnext"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/imageView1"
+        android:layout_marginBottom="34dp"
+        android:ems="10"
+        android:hint="type here"
+        android:textColor="#800000"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/btnext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Tiep Theo" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edword"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvnghia"
+        android:layout_toLeftOf="@+id/btnext"
+        android:src="@drawable/sai00" />
+
+    <Button
+        android:id="@+id/btok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edword"
+        android:layout_alignBottom="@+id/edword"
+        android:layout_alignParentRight="true"
+        android:text="OK" />
+
+    <ImageView
+        android:id="@+id/imagecheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/edword"
+        android:layout_alignLeft="@+id/btnext"
+        android:layout_alignTop="@+id/btok"
+        android:layout_toLeftOf="@+id/btok"
+        android:src="@drawable/ngdep" />
+
+    <TextView
+        android:id="@+id/tvkiluc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvdiem"
+        android:layout_toRightOf="@+id/imageView1"
+        android:background="#00FFFF"
+        android:text="Kỉ Lục:"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/tvsai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvkiluc"
+        android:layout_toRightOf="@+id/imageView1"
+        android:background="#F80000"
+        android:text="Số sai:"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/tvdapan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvsai"
+        android:layout_toRightOf="@+id/imageView1"
+        android:background="#003333"
+        android:text="Đáp Án"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/tvdiem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvkiluc"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_marginTop="34dp"
+        android:background="#00FF00"
+        android:text="Điểm :"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+</RelativeLayout>

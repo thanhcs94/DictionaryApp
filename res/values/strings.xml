@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Way To Learn 3000 Word English</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_list_word">ListWord</string>
+    <string name="title_activity_find_word">FindWord</string>
+    <string name="title_activity_view_word">ViewWord</string>
+    <string name="title_activity_list1000_cau_noi_thong_dung">List1000CauNoiThongDung</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_game__word">Guess Word</string>
+    <string name="title_activity_game__mean">Test Word</string>
+    <string name="title_activity_dang_nhap_game">DangNhapGame</string>
+
+</resources>
