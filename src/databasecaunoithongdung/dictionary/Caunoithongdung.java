@@ -9,7 +9,7 @@ public class Caunoithongdung {
 	{
 		
 	}
-
+///àobrubiuewbfbfbwefwebfwebfoewbofbweobfoiewfoiweiofbewfewfbeoiwbfiewb
 	public Caunoithongdung(int stt, String ndanh,
 			String ndviet,  int loai, int yeuthich) {
 		super();
