@@ -246,13 +246,26 @@ public class DictionaryDataBase extends SQLiteOpenHelper {
 			list.add(word);
 		}
 
-
 		return list;
 	}
 	
+
+	public int getContactsCount() {
+		String countQuery = "SELECT  * FROM " + TABLE_NAME;
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor cursor = db.rawQuery(countQuery, null);
+		cursor.close();
+ 
+		return cursor.getCount();
+	}
+
+
+
+
+	
 	public void updatedahocword(int id) {
 		SQLiteDatabase db = this.getWritableDatabase();
-		db.rawQuery("UPDATE DICTIONARY SET dahoc =1 WHERE  stt = "+id, null);
+		db.rawQuery("UPDATE DICTIONARY SET learn =1 WHERE  stt = "+id, null);
 		System.out.println("Thanh Cong CMnr : ");
 		// Cursor c= db.rawQuery("select * from DICTIONARY  where  DAHOC =1",null);	
 	}
