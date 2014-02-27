@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+  	android:layout_height="match_parent"
+  	 android:padding="6dip" >
+<!--  android:layout_height="?android:attr/listPreferredItemHeight" -->
+    <TextView
+        android:id="@+id/firstline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+       
+        android:layout_alignWithParentIfMissing="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="15sp"
+        android:text="@string/hello_world"
+        android:textColor="#800000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <TextView
+        android:id="@+id/tvam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstline"
+        android:layout_marginTop="18dp"
+        android:layout_toRightOf="@+id/tvloaitu"
+        android:text="TextView"
+        android:textColor="#00ff00"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:layout_marginLeft="60sp"
+        android:typeface="serif" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/secondLine"
+        android:layout_alignLeft="@+id/firstline"
+        android:src="@drawable/add_favourite" />
+
+    <TextView
+        android:id="@+id/tvloaitu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvam"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/secondLine"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="39dp"
+        android:src="@drawable/ic_music" />
+
+    <TextView
+        android:id="@+id/secondLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvam"
+        android:ellipsize="marquee"
+        android:lines="3"
+        android:paddingLeft="10sp"
+        android:singleLine="true"
+        android:text="@string/hello_world"
+        android:textColor="#200000"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:typeface="serif" />
+
+</RelativeLayout>

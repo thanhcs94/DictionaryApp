@@ -19,7 +19,9 @@
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content" 
+                android:background="#00df00">
+                
             </TabWidget>
 
        
@@ -43,30 +45,21 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/findWord"
+                    android:id="@+id/listtheoabc"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical" >
 
-                    <include layout="@layout/tabfindword" />
+                    <include layout="@layout/tablistwordabc" />
                 </RelativeLayout>
 
                  <RelativeLayout
-                    android:id="@+id/caunoitd"
+                    android:id="@+id/listdahoc"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:orientation="vertical" >
 
-                    <include layout="@layout/list1000_cau_noi_thong_dung" />
-                </RelativeLayout>
-                
-                <RelativeLayout
-                    android:id="@+id/gameWord"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical" >
-
-                    <include layout="@layout/tabgame" />
+                    <include layout="@layout/tablistdahoc" />
                 </RelativeLayout>
             </FrameLayout>
         </LinearLayout>

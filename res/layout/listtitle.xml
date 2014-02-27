@@ -38,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/secondLine"
         android:layout_alignLeft="@+id/firstline"
+        android:onClick="btdahoc"
         android:src="@drawable/add_favourite" />
 
     <TextView

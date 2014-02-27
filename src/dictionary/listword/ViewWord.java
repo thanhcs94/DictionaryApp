@@ -16,7 +16,7 @@ import android.view.Menu;
 import android.widget.TextView;
 
 public class ViewWord extends Activity {
-	//aabb
+
 	TextView tvword, tvvidu, tvmean;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

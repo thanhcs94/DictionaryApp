@@ -15,14 +15,18 @@ import android.provider.MediaStore.Audio.Media;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Animatable;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -158,7 +162,7 @@ public class Game_Word extends Activity {
 					{
 						imagecheck.setImageResource(R.drawable.ngdep);
 						index = (int)(Math.random()*arrword.size());
-						tvnghia.setText(index+" "+arrword.get(index).getVidu().toString());
+						tvnghia.setText(/*index+" "+*/arrword.get(index).getVidu().toString());
 						edword.setText("");
 						tvdapan.setText("");
 						kttraloi =0;
@@ -254,7 +258,7 @@ public class Game_Word extends Activity {
 		arrword = db.gettutheoAC(1, 221);
 	
 		index = (int)(Math.random()*arrword.size());
-		tvnghia.setText(index+" "+arrword.get(index).getVidu().toString());
+		tvnghia.setText(/*index+" "+*/arrword.get(index).getVidu().toString());
 		
 		Intent intent = getIntent();
 		Bundle bunder = intent.getBundleExtra("data");
@@ -271,9 +275,16 @@ public class Game_Word extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.game__word, menu);
-		return true;
-	}
 
+		MenuInflater inflate  =  getMenuInflater();
+		inflate.inflate(R.menu.activity_main_actions, menu);
+
+
+		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+		SearchView searchView = (SearchView) menu.findItem(R.id.action_search)
+				.getActionView();
+		searchView.setSearchableInfo(searchManager
+				.getSearchableInfo(getComponentName()));
+		return super.onCreateOptionsMenu(menu);
+	}
 }

@@ -15,7 +15,7 @@
         android:layout_alignWithParentIfMissing="true"
         android:gravity="center_vertical"
         android:text="@string/hello_world"
-        android:textColor="#FF0000"
+        android:textColor="#800000"
         android:textSize="20sp"
         android:textStyle="bold"
         android:typeface="serif" />

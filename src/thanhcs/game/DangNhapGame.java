@@ -1,58 +1,114 @@
 package thanhcs.game;
 
+import java.util.ArrayList;
+
+
 import thanhcs.dictionarydemo.R;
-import thanhcs.dictionarydemo.R.layout;
-import thanhcs.dictionarydemo.R.menu;
+import thanhcs.dictionarydemo.database.DictionaryDataBase;
+import thanhcs.dictionarydemo.database.MyWord;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.Toast;
 
 public class DangNhapGame extends Activity {
 
-	Button btdangnhap, btthoat;
-	EditText eduser;
+
+	DictionaryDataBase db;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_dang_nhap_game);
+		setContentView(R.layout.tabgame);
+		Button btgametu =(Button)findViewById(R.id.btgametu);
+		Button btgamenghia =(Button)findViewById(R.id.btgamenghia);
+		db = new DictionaryDataBase(this);
 
-		btdangnhap =(Button)findViewById(R.id.btdangnhap);
-		btthoat =(Button)findViewById(R.id.btboqua);
-		eduser =(EditText)findViewById(R.id.edusername);
-
-
-		btdangnhap.setOnClickListener(new View.OnClickListener() {
-
+		btgamenghia.setOnClickListener(new View.OnClickListener() {
+			
 			@Override
 			public void onClick(View v) {
-				
-				String user = eduser.getText().toString();
-				Intent intent = new Intent(DangNhapGame.this, Game_Word.class);
-				Bundle bunde = new Bundle();
-				bunde.putString("user",user );
-				intent.putExtra("data", bunde);
+				ArrayList<MyWord>arrdahoc =db.gettudahoc();
+				if(arrdahoc.size()>=5)
+				{
+				Intent intent = new Intent(DangNhapGame.this, Game_Mean.class);
 				startActivity(intent);
-
+				}
+				else
+				{
+					Toast.makeText(DangNhapGame.this,"Bạn Cần Học Ít Nhất 5 Từ Để Chơi Game Này", Toast.LENGTH_SHORT).show();
+				}
+					
+	
 			}
 		});
+		
+		
+		
 
-
-		btthoat.setOnClickListener(new View.OnClickListener() {
-
+		btgametu.setOnClickListener(new View.OnClickListener() {
+			
 			@Override
 			public void onClick(View v) {
-				finish();
-
+				ArrayList<MyWord>arrdahoc =db.gettudahoc();
+				if(arrdahoc.size()>=5)
+				{
+				Intent intent = new Intent(DangNhapGame.this, Game_Word.class);
+				startActivity(intent);
+				}
+				else
+				{
+					Toast.makeText(DangNhapGame.this,"Bạn Cần Học Ít Nhất 5 Từ Để Chơi Game Này", Toast.LENGTH_SHORT).show();
+				}
+					
+	
 			}
 		});
+}
 
 
 
-	}
+			
+
+
+
+
+
+
+	//
+	//		btdangnhap =(Button)findViewById(R.id.btdangnhap);
+	//		btthoat =(Button)findViewById(R.id.btboqua);
+	//		eduser =(EditText)findViewById(R.id.edusername);
+	//
+	//
+	//		btdangnhap.setOnClickListener(new View.OnClickListener() {
+	//
+	//			@Override
+	//			public void onClick(View v) {
+	//				
+	//				String user = eduser.getText().toString();
+	//				Intent intent = new Intent(DangNhapGame.this, Game_Word.class);
+	//				Bundle bunde = new Bundle();
+	//				bunde.putString("user",user );
+	//				intent.putExtra("data", bunde);
+	//				startActivity(intent);
+	//
+	//			}
+	//		});
+
+
+	//		btthoat.setOnClickListener(new View.OnClickListener() {
+	//
+	//			@Override
+	//			public void onClick(View v) {
+	//				finish();
+	//
+	//			}
+	//		});
+	//
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

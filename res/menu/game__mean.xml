@@ -1,9 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/getdahoc"
         android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:showAsAction="always"
+        android:title="Chỉ test những từ đã học"/>
+    
+     <item
+        android:id="@+id/gettatca"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Tất 3000 từ"/>
+     
+      <item
+        android:id="@+id/theovan"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Test theo vần"/>
 
 </menu>

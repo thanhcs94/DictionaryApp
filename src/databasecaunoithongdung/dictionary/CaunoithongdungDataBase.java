@@ -156,8 +156,6 @@ public class CaunoithongdungDataBase extends SQLiteOpenHelper {
 				
 				return list;
 			}
-
-			
 	
 	
 }

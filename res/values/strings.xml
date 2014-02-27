@@ -12,5 +12,7 @@
     <string name="title_activity_game__word">Guess Word</string>
     <string name="title_activity_game__mean">Test Word</string>
     <string name="title_activity_dang_nhap_game">DangNhapGame</string>
+    <string name="title_activity_select__leson__grammar">Select_Leson_Grammar</string>
+    <string name="title_activity_view_grammar">ViewGrammar</string>
 
 </resources>

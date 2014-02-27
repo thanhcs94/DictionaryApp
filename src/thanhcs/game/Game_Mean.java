@@ -3,6 +3,7 @@ package thanhcs.game;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Vector;
+import java.util.zip.Inflater;
 
 import thanhcs.dictionarydemo.R;
 import thanhcs.dictionarydemo.R.layout;
@@ -12,9 +13,11 @@ import thanhcs.dictionarydemo.database.MyWord;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.HeterogeneousExpandableList;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -31,7 +34,7 @@ public class Game_Mean extends Activity implements OnClickListener{
 	RadioButton raD;
 	DictionaryDataBase db;
 	ArrayList<MyWord> arrword;
-	int index ;
+	int index;
 	int [] arrrannumber = new int[3];
 	String ketqua;
 	@Override
@@ -180,5 +183,6 @@ public class Game_Mean extends Activity implements OnClickListener{
 		}
 		
 	}
+
 
 }

@@ -1,5 +1,8 @@
 package thanhcs.lesson_grammar;
 
+import java.util.ArrayList;
+
+import listcaunoithongdung.dictionary.MyarrayAdapterCNTD;
 import thanhcs.dictionarydemo.R;
 import thanhcs.dictionarydemo.R.layout;
 import thanhcs.dictionarydemo.R.menu;
@@ -14,21 +17,30 @@ import android.widget.ListView;
 
 public class Select_Leson_Grammar extends Activity {
 
-	private String[]grammar ={"1", "2", "3","4","5","6","7","8","9","10",
-			"11", "12", "13","14","15","16","17","18","19","20",
-			"21", "22", "23","24","25","26","27","28","29","30",
-			"31", "32", "33","34","35","36","37","38","39","310",
-			"41", "42", "43","44","45","46","47","48","49","50"
-	};
+	
+	private String []titlegrammar;
+	private String []titlegrammar2;
+	ArrayList<String>argrammar;
+	ArrayList<String>argrammar2;
 	ListView lv;
-	ArrayAdapter<String> adp;
+	MyarrayAdapterCNTD adp;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_select__leson__grammar);
+		argrammar = new ArrayList<String>();
+		argrammar2 = new ArrayList<String>();
 		lv =(ListView)findViewById(R.id.lvlesson);
+		titlegrammar = getResources().getStringArray(R.array.titlegrammar);
+		titlegrammar2 = getResources().getStringArray(R.array.titlegrammar2);
 		
-		adp = new ArrayAdapter<String>(Select_Leson_Grammar.this, android.R.layout.simple_list_item_1, grammar);
+		for(int  i=0;i< titlegrammar.length;i++)
+		{
+			argrammar.add(titlegrammar[i]);
+			argrammar2.add(titlegrammar2[i]);
+		}
+		
+		adp = new MyarrayAdapterCNTD(Select_Leson_Grammar.this, argrammar,argrammar2);
 		
 		lv.setAdapter(adp);
 		lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

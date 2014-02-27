@@ -23,23 +23,23 @@ public class List1000CauNoiThongDung extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.list1000_cau_noi_thong_dung);
-		dbcntd = new  CaunoithongdungDataBase(this);
-		
-	//	Caunoithongdung caunoi = dbcntd.getcaunoithongdung(10);
-		arrcaunoitd = new ArrayList<Caunoithongdung>();
-		ndviet = new ArrayList<String>();
-		ndanh = new ArrayList<String>();
-		arrcaunoitd = dbcntd.getallcaunoithongdung();
-		for(int i=0;i<arrcaunoitd.size();i++)
-		{
-			ndanh.add(arrcaunoitd.get(i).getNdanh());
-			ndviet.add(arrcaunoitd.get(i).getNdviet());
-		}
-		
-		adp = new MyarrayAdapter(this, ndanh, ndviet);
-		lv = (ListView)findViewById(R.id.lv);
-		lv.setAdapter(adp);
+		setContentView(R.layout.list100ctd);
+//		dbcntd = new  CaunoithongdungDataBase(this);
+//		
+//	//	Caunoithongdung caunoi = dbcntd.getcaunoithongdung(10);
+//		arrcaunoitd = new ArrayList<Caunoithongdung>();
+//		ndviet = new ArrayList<String>();
+//		ndanh = new ArrayList<String>();
+//		arrcaunoitd = dbcntd.getallcaunoithongdung();
+//		for(int i=0;i<arrcaunoitd.size();i++)
+//		{
+//			ndanh.add(arrcaunoitd.get(i).getNdanh());
+//			ndviet.add(arrcaunoitd.get(i).getNdviet());
+//		}
+//		
+//		adp = new MyarrayAdapter(this, ndanh, ndviet);
+//	//	lv = (ListView)findViewById(R.id.lv);
+//		lv.setAdapter(adp);
 		
 		
 		

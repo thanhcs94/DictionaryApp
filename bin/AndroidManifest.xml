@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="13"
+        android:minSdkVersion="11"
         android:targetSdkVersion="18" />
 
     <application
@@ -49,8 +49,16 @@
         </activity>
         <activity
             android:name="thanhcs.game.DangNhapGame"
-            android:label="@string/title_activity_dang_nhap_game"
-             android:theme="@android:style/Theme.Holo.Dialog" >
+            android:label="@string/title_activity_dang_nhap_game">
+        </activity>
+        <activity
+            android:name="thanhcs.lesson_grammar.Select_Leson_Grammar"
+            android:label="@string/title_activity_select__leson__grammar" >
+            
+        </activity>
+        <activity
+            android:name="thanhcs.lesson_grammar.ViewGrammar"
+            android:label="@string/title_activity_view_grammar" >
         </activity>
     </application>
 

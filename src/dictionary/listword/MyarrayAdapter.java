@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class MyarrayAdapter extends ArrayAdapter<String>{
+public class MyarrayAdapter extends ArrayAdapter<String> {
 	
 	public ArrayList<String> tu;
 	public ArrayList<String> nghia;
@@ -79,10 +79,11 @@ public class MyarrayAdapter extends ArrayAdapter<String>{
 		holder.tvloaitu.setText(loaitu.get(position).toString());
 		holder.tvnghia.setText(nghia.get(position));
 		holder.tvphatam.setText(phatam.get(position));
-		
-//		holder.txtViewTitle.setText(myword.get(position).getTu().toString());
-//		holder.txtViewDescription.setText(myword.get(position).getNghia().toString());
 
+
+
+		  
+		   
 		
 		return convertView;
 	}
