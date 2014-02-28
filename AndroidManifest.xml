@@ -49,16 +49,19 @@
         </activity>
         <activity
             android:name="thanhcs.game.DangNhapGame"
-            android:label="@string/title_activity_dang_nhap_game">
+            android:label="@string/title_activity_dang_nhap_game" >
         </activity>
         <activity
             android:name="thanhcs.lesson_grammar.Select_Leson_Grammar"
             android:label="@string/title_activity_select__leson__grammar" >
-            
         </activity>
         <activity
             android:name="thanhcs.lesson_grammar.ViewGrammar"
             android:label="@string/title_activity_view_grammar" >
+        </activity>
+        <activity
+            android:name="listcaunoithongdung.dictionary.ShowViewCntd"
+            android:label="@string/title_activity_show_view_cntd" >
         </activity>
     </application>
 

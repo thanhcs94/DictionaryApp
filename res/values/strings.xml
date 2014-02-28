@@ -14,5 +14,6 @@
     <string name="title_activity_dang_nhap_game">DangNhapGame</string>
     <string name="title_activity_select__leson__grammar">Select_Leson_Grammar</string>
     <string name="title_activity_view_grammar">ViewGrammar</string>
+    <string name="title_activity_show_view_cntd">ShowViewCntd</string>
 
 </resources>

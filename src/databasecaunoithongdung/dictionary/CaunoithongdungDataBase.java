@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.media.audiofx.NoiseSuppressor;
+import android.util.Log;
 
 public class CaunoithongdungDataBase extends SQLiteOpenHelper {
 
@@ -104,6 +105,7 @@ public class CaunoithongdungDataBase extends SQLiteOpenHelper {
 
 			public ArrayList<Caunoithongdung> getallcaunoithongdung()
 			{
+				
 				SQLiteDatabase sd= getWritableDatabase();
 				ArrayList<Caunoithongdung> list= new ArrayList<Caunoithongdung>();
 				Cursor c= sd.rawQuery("select * from "+TABLE_NAME,null);
@@ -111,6 +113,7 @@ public class CaunoithongdungDataBase extends SQLiteOpenHelper {
 				c.moveToNext();
 				
 				while(c.moveToPrevious()){
+				
 					Caunoithongdung caunoi= new Caunoithongdung();
 					caunoi.setStt(c.getInt(c.getColumnIndex(STT)));
 					caunoi.setLoai(c.getInt(c.getColumnIndex(LOAI)));
@@ -120,8 +123,6 @@ public class CaunoithongdungDataBase extends SQLiteOpenHelper {
 					
 					caunoi.setNdanh(c.getString(c.getColumnIndex(NDANH)));
 					caunoi.setNdviet(c.getString(c.getColumnIndex(NDVIET)));
-				
-					System.out.println("danh dach cau noi thong dung la "+ list.toString());
 					list.add(caunoi);
 				}
 				
@@ -148,8 +149,6 @@ public class CaunoithongdungDataBase extends SQLiteOpenHelper {
 					
 					caunoi.setNdanh(c.getString(c.getColumnIndex(NDANH)));
 					caunoi.setNdviet(c.getString(c.getColumnIndex(NDVIET)));
-				
-					System.out.println("danh dach cau noi thong dung la "+ list.toString());
 					list.add(caunoi);
 				}
 				
@@ -157,5 +156,7 @@ public class CaunoithongdungDataBase extends SQLiteOpenHelper {
 				return list;
 			}
 	
-	
+			
+			
+		
 }

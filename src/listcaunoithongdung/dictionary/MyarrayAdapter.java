@@ -28,7 +28,7 @@ public class MyarrayAdapter extends ArrayAdapter<String>{
 	public MyarrayAdapter(Activity context,
 			ArrayList<String>  title,
 			ArrayList<String>  description) {
-		super(context, R.layout.listcaunoithongdung, title);
+		super(context, R.layout.list100ctd, title);
 		this.context = context;
 		this.ndanh = title;
 		this.ndviet = description;
@@ -54,9 +54,9 @@ public class MyarrayAdapter extends ArrayAdapter<String>{
 		if(convertView==null)
 		{
 			holder = new ViewHolder();
-			convertView = inflater.inflate(R.layout.listcaunoithongdung, null);
+			convertView = inflater.inflate(R.layout.list100ctd, null);
 
-			holder.imgViewLogo = (ImageView) convertView.findViewById(R.id.icon);
+		//	holder.imgViewLogo = (ImageView) convertView.findViewById(R.id.icon);
 			holder.txtViewTitle = (TextView) convertView.findViewById(R.id.firstline);
 			holder.txtViewDescription = (TextView) convertView.findViewById(R.id.secondLine);
 		//	holder.tvphatam =(TextView) convertView.findViewById(R.id.tvam);

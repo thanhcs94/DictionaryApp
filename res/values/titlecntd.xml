@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="titlecntd">
+        <item >I. NHỮNG THÀNH NGỮ THÔNG DỤNG</item>
+        <item >II. CHÀO HỎI</item>
+        <item >III. DU LỊCH –PHƯƠNG HƯỚNG</item>
+        <item >IV. CON SỐ - TIỀN BẠC</item>
+        <item >V. ĐỊA ĐIỂM</item>
+        <item >VI. ĐIỆN THOẠI – INTERNET –THƯ</item>
+        <item >VII. THỜI GIAN VÀ NGÀY THÁNG</item>
+        <item >VIII. CHỖ ĂN Ở</item>
+        <item >IX. ĂN</item>
+        <item >X. KẾT BẠN</item> 
+        <item>XI. GIẢI TRÍ</item>
+        <item>XII. MUA SẮM</item>
+        <item>XIII. KHÓ KHĂN GIAO TIẾP</item>
+        <item>XIV. TRƯỜNG HỢP KHẨN CẤP VÀ SỨC KHỎE</item>
+        <item>XV. NHỮNG CÂU HỎI THÔNG THƯỜNG</item>
+        <item>XVI. VIỆC LÀM</item>
+        <item>XVII. THỜI TIẾT</item>
+    </string-array>
+</resources>
