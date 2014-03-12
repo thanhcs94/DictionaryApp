@@ -61,21 +61,11 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/btnext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/radioGroup1"
-        android:layout_marginRight="41dp"
-        android:layout_marginTop="44dp"
-        android:text="Next" />
-
-    <Button
         android:id="@+id/btcheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/btnext"
-        android:layout_toLeftOf="@+id/btnext"
+        android:layout_alignBottom="@+id/btnextgw"
+        android:layout_toLeftOf="@+id/btnextgw"
         android:text="check" />
 
     <TextView
@@ -93,5 +83,13 @@
         android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="serif" />
+
+    <Button
+        android:id="@+id/btnext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Next" />
 
 </RelativeLayout>

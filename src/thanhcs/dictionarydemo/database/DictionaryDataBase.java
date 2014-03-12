@@ -1,19 +1,17 @@
 package thanhcs.dictionarydemo.database;
 
+ 
 
 
 
 import java.util.ArrayList;
-
-import thanhcs.game.GameRecord;
-
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteStatement;
+
 
 public class DictionaryDataBase extends SQLiteOpenHelper {
 
@@ -32,7 +30,7 @@ public class DictionaryDataBase extends SQLiteOpenHelper {
 	private static final String LEARN = "learn";
 	private static final String HISTORY = "history";
 	private static final String IMPORTAN = "importan";
-
+	private Context context;
 	//==========================
 	
 	
@@ -64,7 +62,7 @@ public class DictionaryDataBase extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		//	db.execSQL(createtable);
-
+		
 	}
 
 	@Override
@@ -73,8 +71,6 @@ public class DictionaryDataBase extends SQLiteOpenHelper {
 			//	onCreate(db);
 
 	}
-
-	
 
 	// them 1 cau hoi moi
 	public void addword(MyWord word) {

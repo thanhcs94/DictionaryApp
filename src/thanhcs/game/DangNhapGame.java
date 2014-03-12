@@ -31,15 +31,10 @@ public class DangNhapGame extends Activity {
 			@Override
 			public void onClick(View v) {
 				ArrayList<MyWord>arrdahoc =db.gettudahoc();
-				if(arrdahoc.size()>=5)
-				{
+				
 				Intent intent = new Intent(DangNhapGame.this, Game_Mean.class);
 				startActivity(intent);
-				}
-				else
-				{
-					Toast.makeText(DangNhapGame.this,"Bạn Cần Học Ít Nhất 5 Từ Để Chơi Game Này", Toast.LENGTH_SHORT).show();
-				}
+				
 					
 	
 			}
@@ -53,15 +48,10 @@ public class DangNhapGame extends Activity {
 			@Override
 			public void onClick(View v) {
 				ArrayList<MyWord>arrdahoc =db.gettudahoc();
-				if(arrdahoc.size()>=5)
-				{
+				
 				Intent intent = new Intent(DangNhapGame.this, Game_Word.class);
 				startActivity(intent);
-				}
-				else
-				{
-					Toast.makeText(DangNhapGame.this,"Bạn Cần Học Ít Nhất 5 Từ Để Chơi Game Này", Toast.LENGTH_SHORT).show();
-				}
+				
 					
 	
 			}

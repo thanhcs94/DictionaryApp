@@ -96,7 +96,7 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/btnext"
+        android:id="@+id/btnextgw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="250dp"
@@ -107,7 +107,7 @@
         android:id="@+id/btback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/btnext"
+        android:layout_alignBottom="@+id/btnextgw"
         android:layout_marginLeft="190dp"
         android:text="Back" />
 
@@ -116,7 +116,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/btback"
-        android:layout_alignRight="@+id/btnext"
+        android:layout_alignRight="@+id/btnextgw"
         android:text="Speak" />
 
 </RelativeLayout>

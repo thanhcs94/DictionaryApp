@@ -69,7 +69,7 @@ public class Game_Mean extends Activity implements OnClickListener{
 
 		db = new DictionaryDataBase(this);
 		arrword = new ArrayList<MyWord>();
-	//	arrword = db.getallWord();
+		arrword = db.gettutheoAC(1, 1000);
 		
 		
 
@@ -100,31 +100,31 @@ public class Game_Mean extends Activity implements OnClickListener{
 		
 		if(so==1)
 		{
-			raA.setText(arrword.get(index).getMean().toString());
-			raB.setText(arrword.get(arrrannumber[2]).getMean().toString());
-			raC.setText(arrword.get(arrrannumber[0]).getMean().toString());
-			raD.setText(arrword.get(arrrannumber[1]).getMean().toString());
+			raA.setText(arrword.get(index).getVidu().toString());
+			raB.setText(arrword.get(arrrannumber[2]).getVidu().toString());
+			raC.setText(arrword.get(arrrannumber[0]).getVidu().toString());
+			raD.setText(arrword.get(arrrannumber[1]).getVidu().toString());
 		}
 		if(so==2)
 		{
-			raA.setText(arrword.get(arrrannumber[2]).getMean().toString());
-			raB.setText(arrword.get(index).getMean().toString());
-			raC.setText(arrword.get(arrrannumber[0]).getMean().toString());
-			raD.setText(arrword.get(arrrannumber[1]).getMean().toString());
+			raA.setText(arrword.get(arrrannumber[2]).getVidu().toString());
+			raB.setText(arrword.get(index).getVidu().toString());
+			raC.setText(arrword.get(arrrannumber[0]).getVidu().toString());
+			raD.setText(arrword.get(arrrannumber[1]).getVidu().toString());
 		}
 		if(so==3)
 		{
-			raA.setText(arrword.get(arrrannumber[2]).getMean().toString());
-			raB.setText(arrword.get(arrrannumber[0]).getMean().toString());
-			raC.setText(arrword.get(index).getMean().toString());
-			raD.setText(arrword.get(arrrannumber[1]).getMean().toString());
+			raA.setText(arrword.get(arrrannumber[2]).getVidu().toString());
+			raB.setText(arrword.get(arrrannumber[0]).getVidu().toString());
+			raC.setText(arrword.get(index).getVidu().toString());
+			raD.setText(arrword.get(arrrannumber[1]).getVidu().toString());
 		}
 		if(so==4)
 		{
-			raA.setText(arrword.get(arrrannumber[2]).getMean().toString());
-			raB.setText(arrword.get(arrrannumber[0]).getMean().toString());
-			raC.setText(arrword.get(arrrannumber[1]).getMean().toString());
-			raD.setText(arrword.get(index).getMean().toString());
+			raA.setText(arrword.get(arrrannumber[2]).getVidu().toString());
+			raB.setText(arrword.get(arrrannumber[0]).getVidu().toString());
+			raC.setText(arrword.get(arrrannumber[1]).getVidu().toString());
+			raD.setText(arrword.get(index).getVidu().toString());
 		}
 		
 		

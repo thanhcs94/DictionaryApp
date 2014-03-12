@@ -24,14 +24,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/btnext"
+        android:layout_toLeftOf="@+id/btnextgw"
         android:text="Xem Dap An" />
 
     <EditText
         android:id="@+id/edword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnext"
+        android:layout_above="@+id/btnextgw"
         android:layout_alignParentLeft="true"
         android:layout_alignRight="@+id/imageView1"
         android:layout_marginBottom="34dp"
@@ -41,7 +41,7 @@
         android:textSize="30sp" />
 
     <Button
-        android:id="@+id/btnext"
+        android:id="@+id/btnextgw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -55,7 +55,7 @@
         android:layout_above="@+id/edword"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/tvnghia"
-        android:layout_toLeftOf="@+id/btnext"
+        android:layout_toLeftOf="@+id/btnextgw"
         android:src="@drawable/sai00" />
 
     <Button
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/edword"
-        android:layout_alignLeft="@+id/btnext"
+        android:layout_alignLeft="@+id/btnextgw"
         android:layout_alignTop="@+id/btok"
         android:layout_toLeftOf="@+id/btok"
         android:src="@drawable/ngdep" />

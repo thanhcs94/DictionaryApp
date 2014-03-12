@@ -241,7 +241,7 @@ public class Game_Word extends Activity {
 		imagecheck = (ImageView)findViewById(R.id.imagecheck);
 		btok =(Button)findViewById(R.id.btok);
 		btdapan =(Button)findViewById(R.id.btdapan);
-		btnext =(Button)findViewById(R.id.btnext);
+		btnext =(Button)findViewById(R.id.btnextgw);
 		tvnghia =(TextView)findViewById(R.id.tvnghia);
 		tvdiem =(TextView)findViewById(R.id.tvdiem);
 		tvkiluc=(TextView)findViewById(R.id.tvkiluc);
@@ -260,16 +260,16 @@ public class Game_Word extends Activity {
 		index = (int)(Math.random()*arrword.size());
 		tvnghia.setText(/*index+" "+*/arrword.get(index).getVidu().toString());
 		
-		Intent intent = getIntent();
-		Bundle bunder = intent.getBundleExtra("data");
-		user = bunder.getString("user");
-		ArrayList<GameRecord> arr = new ArrayList<GameRecord>();
-		arr =gm.getallUser();
-		for(int i=0; i<arr.size();i++)
-		{
-			if(arr.get(i).getUsename().equalsIgnoreCase(user))
-				tvkiluc.setText(("MAX :"+arr.get(i).getKiluctu()));
-		}
+//		Intent intent = getIntent();
+//		Bundle bunder = intent.getBundleExtra("data");
+//		user = bunder.getString("user");
+//		ArrayList<GameRecord> arr = new ArrayList<GameRecord>();
+//		arr =gm.getallUser();
+//		for(int i=0; i<arr.size();i++)
+//		{
+//			if(arr.get(i).getUsename().equalsIgnoreCase(user))
+//				tvkiluc.setText(("MAX :"+arr.get(i).getKiluctu()));
+//		}
 		
 	}
 

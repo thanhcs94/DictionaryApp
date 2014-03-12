@@ -1,6 +1,7 @@
 package thanhcs.dictionarydemo;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 
@@ -25,6 +26,8 @@ import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -42,8 +45,8 @@ import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
 @SuppressLint("NewApi")
-public class Dictionary extends Activity{
-
+public class Dictionary extends Activity  implements TextToSpeech.OnInitListener {
+	private TextToSpeech tts;
 	CaunoithongdungDataBase dbcntd;
 	ArrayList<Caunoithongdung> arrcaunoitd;
 	//=============================
@@ -60,7 +63,7 @@ public class Dictionary extends Activity{
 	//==============================
 
 	//===tab list word
-	ArrayList<String> arrstrword,arrstrnghia, arrphatam, arrloai;
+	ArrayList<String> arrstrword,arrstrnghia, arrphatam, arrloai, arrmean;
 	ArrayList<String> arrstrwordabc,arrstrnghiaabc, arrphatamabc, arrloaiabc;
 	ArrayList<String> arrstrwordahoc;
 	ListView lv;
@@ -77,6 +80,7 @@ public class Dictionary extends Activity{
 			"Z"
 
 	};
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -84,6 +88,7 @@ public class Dictionary extends Activity{
 		db = new DictionaryDataBase(this);
 		arrlistwordtudahoc = new ArrayList<MyWord>();
 		arrlistwordtudahoc = db.gettudahoc();
+		tts = new TextToSpeech(this, this);
 
 
 		setinit();
@@ -289,12 +294,14 @@ public class Dictionary extends Activity{
 		arrstrnghia =new ArrayList<String>();
 		arrphatam =new ArrayList<String>();
 		arrloai =new ArrayList<String>();
+	    arrmean = new ArrayList<String>();
 
 
 		arrstrword.removeAll(arrstrword);
 		arrloai.removeAll(arrloai);
 		arrphatam.removeAll(arrphatam);
 		arrstrnghia.removeAll(arrstrnghia);
+		arrmean.removeAll(arrmean);
 
 
 		size = arrlistword.size();	
@@ -309,6 +316,7 @@ public class Dictionary extends Activity{
 		arrloai.removeAll(arrloai);
 		arrphatam.removeAll(arrphatam);
 		arrstrnghia.removeAll(arrstrnghia);
+		arrmean.removeAll(arrmean);
 		for(int i=0;i<arrlistword.size();i++)
 		{
 			System.out.println(""+i);
@@ -316,9 +324,10 @@ public class Dictionary extends Activity{
 			arrstrnghia.add(arrlistword.get(i).getVidu());
 			arrphatam.add(arrlistword.get(i).getSound());
 			arrloai.add(arrlistword.get(i).getType());
+			arrmean.add(arrlistword.get(i).getMean());
 		}
 
-		adp = new MyarrayAdapter(Dictionary.this, arrstrword, arrstrnghia, arrphatam, arrloai);
+		adp = new MyarrayAdapter(Dictionary.this, arrstrword, arrstrnghia, arrphatam, arrloai, arrmean);
 		lv.setAdapter(adp);
 
 		lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -326,6 +335,7 @@ public class Dictionary extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
+				
 				word =arrlistword.get(arg2);
 				Intent intent= new Intent(Dictionary.this, ViewWord.class);
 				Bundle bundle = new Bundle();
@@ -343,34 +353,37 @@ public class Dictionary extends Activity{
 			@Override
 			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
-
-				MyWord wordupdate = new MyWord();
-				wordupdate.setId(arrlistword.get(arg2).getId());
-				wordupdate.setMean(arrlistword.get(arg2).getMean());
-				wordupdate.setVidu(arrlistword.get(arg2).getVidu());
-				wordupdate.setSound(arrlistword.get(arg2).getSound());
-				wordupdate.setImportan(arrlistword.get(arg2).getImportan());
-				wordupdate.setType(arrlistword.get(arg2).getType());
-				wordupdate.setWord(arrlistword.get(arg2).getWord());
-				wordupdate.setHistory(arrlistword.get(arg2).getHistory());
-				wordupdate.setLearn(1);
-				db.updateWord(wordupdate);
-
-				//su kien can su li sau khi update la da hoc!
-				Toast.makeText(Dictionary.this, "Bạn đã đánh thuộc từ này", Toast.LENGTH_SHORT).show();
-				arrlistwordtudahoc.add(wordupdate);
-				adtdahoc.notifyDataSetChanged();
-				tvthongtindahoc.setText("Tổng :3114"+"-"+"Đã Học :"+arrlistwordtudahoc.size());
-				settablistdahoc();
+			
+				String text =arrlistword.get(arg2).getWord().toString();
+				 tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+				
+//				MyWord wordupdate = new MyWord();
+//				wordupdate.setId(arrlistword.get(arg2).getId());
+//				wordupdate.setMean(arrlistword.get(arg2).getMean());
+//				wordupdate.setVidu(arrlistword.get(arg2).getVidu());
+//				wordupdate.setSound(arrlistword.get(arg2).getSound());
+//				wordupdate.setImportan(arrlistword.get(arg2).getImportan());
+//				wordupdate.setType(arrlistword.get(arg2).getType());
+//				wordupdate.setWord(arrlistword.get(arg2).getWord());
+//				wordupdate.setHistory(arrlistword.get(arg2).getHistory());
+//				wordupdate.setLearn(1);
+//				db.updateWord(wordupdate);
+//
+//				//su kien can su li sau khi update la da hoc!
+//				Toast.makeText(Dictionary.this, "Bạn đã đánh thuộc từ này", Toast.LENGTH_SHORT).show();
+//				arrlistwordtudahoc.add(wordupdate);
+//				adtdahoc.notifyDataSetChanged();
+//				tvthongtindahoc.setText("Tổng :3114"+"-"+"Đã Học :"+arrlistwordtudahoc.size());
+//				settablistdahoc();
 				return true;
 			}
+
+		
 
 
 
 		}); 
 	}
-
-
 
 	//=================================================Creat TabHost============================================================
 	private void setinit() {
@@ -510,7 +523,6 @@ public class Dictionary extends Activity{
 			@Override
 			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
-
 				MyWord wordupdate = new MyWord();
 				wordupdate.setId(arrlistwordabc.get(arg2).getId());
 				wordupdate.setMean(arrlistwordabc.get(arg2).getMean());
@@ -540,4 +552,36 @@ public class Dictionary extends Activity{
 	}
 
 
+
+
+	//====================================Text To Speed==========================
+	@Override
+	public void onInit(int status) {
+		if (status == TextToSpeech.SUCCESS) {
+			 
+            int result = tts.setLanguage(Locale.US);
+ 
+            if (result == TextToSpeech.LANG_MISSING_DATA
+                    || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                Log.e("TTS", "This Language is not supported");
+            } else {
+               
+            }
+ 
+        } else {
+            Log.e("TTS", "Initilization Failed!");
+        }
+		
+	}
+
+	@Override
+	protected void onDestroy() {
+		if(tts==null)
+		{
+			tts.stop();
+			tts.shutdown();
+		}
+		super.onDestroy();
+	}
 }
+

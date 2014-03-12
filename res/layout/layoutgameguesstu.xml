@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/edword"
-        android:layout_alignLeft="@+id/btnext"
+        android:layout_alignLeft="@+id/btnextgw"
         android:layout_alignTop="@+id/btok"
         android:layout_toLeftOf="@+id/btok"
         android:src="@drawable/ngdep" />
@@ -90,7 +90,7 @@
         android:src="@drawable/demo00" />
 
     <Button
-        android:id="@+id/btnext"
+        android:id="@+id/btnextgw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
